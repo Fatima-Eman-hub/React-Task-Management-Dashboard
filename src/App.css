@@ -1,0 +1,363 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app-shell.light {
+  background-color: #f4f6fb;
+  color: #1f2937;
+}
+
+.app-shell.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.header p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.light .card {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.dark .card {
+  background-color: #2d3a4e;
+  color: #f9fafb;
+  border-color: #475569;
+}
+
+.card h2,
+.task-card h3 {
+  margin-top: 0;
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.task-form label {
+  align-self: center;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 180px;
+}
+
+input,
+select {
+  padding: 9px;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+}
+
+.light input,
+.light select {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.dark input,
+.dark select {
+  background-color: #1f2937;
+  color: #f9fafb;
+  border-color: #64748b;
+}
+
+button {
+  background-color: #405fc5;
+  color: #ffffff;
+}
+
+.task-card {
+  padding: 14px;
+  margin-top: 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+}
+
+.task-card button {
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+.task-card p {
+  overflow-wrap: anywhere;
+}
+
+.notification {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.dark .notification {
+  background-color: #14532d;
+  color: #f0fdf4;
+}
+
+li {
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+small {
+  display: block;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 14px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form input {
+    width: 100%;
+  }
+}
+
+/* Dark mode: force readable text colors */
+.app-shell.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.app-shell.dark h1,
+.app-shell.dark h2,
+.app-shell.dark h3,
+.app-shell.dark h4,
+.app-shell.dark p,
+.app-shell.dark label,
+.app-shell.dark span,
+.app-shell.dark li,
+.app-shell.dark small,
+.app-shell.dark strong,
+.app-shell.dark b,
+.app-shell.dark div,
+.app-shell.dark section,
+.app-shell.dark article {
+  color: #f9fafb;
+}
+
+/* Keep form controls readable */
+.app-shell.dark input,
+.app-shell.dark select,
+.app-shell.dark textarea {
+  background-color: #111827;
+  color: #f9fafb;
+  border: 1px solid #64748b;
+}
+
+.app-shell.dark input::placeholder,
+.app-shell.dark textarea::placeholder {
+  color: #cbd5e1;
+}
+
+/* Card backgrounds */
+.app-shell.dark .card,
+.app-shell.dark .task-card {
+  background-color: #2d3a4e;
+  border-color: #475569;
+  color: #f9fafb;
+}
+
+/* Buttons */
+.app-shell.dark button {
+  color: #ffffff;
+}
+
+/* Activity notification */
+.app-shell.dark .notification {
+  background-color: #14532d;
+  color: #f0fdf4;
+}
+
+
+
+
+
+
+
+/* Task form */
+.task-form {
+  align-items: center;
+}
+
+.task-form label {
+  font-weight: 600;
+}
+
+/* Task card */
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-card-header h3 {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Priority badges */
+.priority-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.priority-high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.priority-medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.priority-low {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* Activity log */
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.activity-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.activity-message {
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.activity-time {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.activity-empty {
+  padding: 12px 0;
+  opacity: 0.8;
+}
+
+.activity-notification {
+  padding: 10px 12px;
+  margin: 0 0 14px;
+  border-radius: 5px;
+  background-color: #dcfce7;
+  color: #166534;
+  overflow-wrap: anywhere;
+}
+
+/* Dark mode */
+.dark .activity-item {
+  background-color: #1f2937;
+  border-color: #475569;
+  color: #f9fafb;
+}
+
+.dark .activity-message,
+.dark .activity-time,
+.dark .activity-empty {
+  color: #f9fafb;
+}
+
+.dark .activity-notification {
+  background-color: #14532d;
+  color: #f0fdf4;
+}
+
